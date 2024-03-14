@@ -19,3 +19,9 @@ class ImagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Images
         fields = ['image', 'title']
+
+
+class CoordsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Coords
+        fields = ['latitude', 'longitude', 'height']
