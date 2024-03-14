@@ -35,9 +35,10 @@ class PassSerializer(WritableNestedModelSerializer):
     tourist_id = UsersSerializer()
     images = ImagesSerializer(many=True)
     coord_id = CoordsSerializer()
-    add_time=serializers.DateTimeField(format='%d-%m-%Y %H:%M:%S')
+    add_time = serializers.DateTimeField(format='%d-%m-%Y %H:%M:%S')
     level = LevelSerializer()
 
     class Meta:
         model = Pass
-        fields = ['beauty_title', 'title', 'other_titles', 'connect', 'add_time', 'tourist_id', 'coordinate_id', 'level', 'images']
+        fields = ['beauty_title', 'title', 'other_titles', 'connect',
+                  'add_time', 'tourist_id', 'coordinate_id', 'level', 'images']
