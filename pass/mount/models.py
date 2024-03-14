@@ -38,3 +38,25 @@ class Coords(models.Model):
     latitude = models.DecimalField(decimal_places=8, max_digits=10)
     longitude = models.DecimalField(decimal_places=8, max_digits=10)
     height = models.IntegerField(default=0)
+
+
+class Level(models.Model):
+    winter = '4A'
+    spring = '2A'
+    summer = '1A'
+    autumn = '3A'
+
+    CHOICES = (
+        ('4A', 'winter'),
+        ('2A', 'spring'),
+        ('1A', 'summer'),
+        ('3A', 'autumn'),
+    )
+    winter_level = models.CharField(
+        max_length=2, choices=CHOICES, default=winter)
+    spring_level = models.CharField(
+        max_length=2, choices=CHOICES, default=winter)
+    summer_level = models.CharField(
+        max_length=2, choices=CHOICES, default=winter)
+    autumn_level = models.CharField(
+        max_length=2, choices=CHOICES, default=winter)
