@@ -63,7 +63,7 @@ class Level(models.Model):
 
 
 class Images(models.Model):
-    image = models.ImageField(upload_to='static/images')
+    image = models.URLField()
     title = models.CharField(max_length=128)
     pass_id = models.ForeignKey(
         Pass, on_delete=models.CASCADE, related_name='images')
