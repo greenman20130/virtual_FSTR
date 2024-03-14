@@ -60,3 +60,13 @@ class Level(models.Model):
         max_length=2, choices=CHOICES, default=winter)
     autumn_level = models.CharField(
         max_length=2, choices=CHOICES, default=winter)
+
+
+class Images(models.Model):
+    image = models.ImageField(upload_to='static/images')
+    title = models.CharField(max_length=128)
+    pass_id = models.ForeignKey(
+        Pass, on_delete=models.CASCADE, related_name='images')
+
+    def __str__(self):
+        return self.title
