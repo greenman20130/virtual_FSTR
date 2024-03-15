@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  db:
+    restart: always
+    image: postgres:16.2
+    container_name: pascord
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: admin
+      POSTGRES_DB: pascord
+    ports:
+      - "5433:5432"
