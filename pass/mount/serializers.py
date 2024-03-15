@@ -34,7 +34,7 @@ class CoordsSerializer(serializers.ModelSerializer):
 class PassSerializer(WritableNestedModelSerializer):
     tourist_id = UsersSerializer()
     images = ImagesSerializer(many=True)
-    coord_id = CoordsSerializer()
+    coordinate_id = CoordsSerializer()
     add_time = serializers.DateTimeField(format='%d-%m-%Y %H:%M:%S')
     level = LevelSerializer()
 

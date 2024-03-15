@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mount',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +81,7 @@ WSGI_APPLICATION = 'pass.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pereval',
+        'NAME': 'pascord',
         'USER': os.getenv('FSTR_LOGIN'),
         'PASSWORD': os.getenv('FSTR_PASS'),
         'HOST': os.getenv('FSTR_DB_HOST'),
