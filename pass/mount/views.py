@@ -28,3 +28,4 @@ class ImagesViewset(viewsets.ModelViewSet):
 class PassViewset(viewsets.ModelViewSet):
    queryset = Pass.objects.all()
    serializer_class = PassSerializer
+   filterset_fields =('tourist_id__email',)
