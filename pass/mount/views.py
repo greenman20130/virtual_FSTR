@@ -30,7 +30,6 @@ class PassViewset(viewsets.ModelViewSet):
     queryset = Pass.objects.all()
     serializer_class = PassSerializer
     filterset_fields = ('tourist_id__email',)
-    
 
     def create(selfself, request, *args, **kwargs):
         serializer = PassSerializer(data=request.data)
@@ -56,7 +55,6 @@ class PassViewset(viewsets.ModelViewSet):
                 'message': 'Ошибка подключения к базе данных',
                 'id': None,
             })
-        
 
     def partial_update(self, request, *args, **kwargs):
         pereval = self.get_object()
