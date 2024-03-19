@@ -152,3 +152,7 @@ cython_debug/
 #.idea/
 pass/postgres_image.tar
 pass/mount/migrations/0001_initial.py
+pass/Dockerfile
+pass/.dockerignore
+pass/compose.yaml
+pass/README.Docker.md

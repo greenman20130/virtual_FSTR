@@ -42,3 +42,21 @@ class PassSerializer(WritableNestedModelSerializer):
         model = Pass
         fields = ['beauty_title', 'title', 'other_titles', 'connect',
                   'add_time', 'tourist_id', 'coordinate_id', 'level', 'images']
+
+    def validate(self, data):
+        if self.instance is not None:
+            instance_user = self.instance.user
+            data_user = data.get('user')
+            validating_user_fields = [
+                instance_user.last_name != data_user['last_name'],
+                instance_user.first_name != data_user['first_name'],
+                instance_user.middle_name != data_user['patronymic'],
+                instance_user.phone != data_user['phone'],
+                instance_user.email != data_user['email'],
+
+            ]
+
+            if data_user is not None and any(validating_user_fields):
+                raise serializers.ValidationError(
+                    {'Отклонено': 'Нельзя изменять данные пользователя'})
+        return data
